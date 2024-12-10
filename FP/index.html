@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Person Daily Routine Tracker</title>
+  <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+  <script>
+    // Periksa apakah pengguna sudah login
+    if (!localStorage.getItem('isLoggedIn')) {
+      window.location.href = './Login/landing.html'; // Redirect ke landing page
+    }
+  </script>
+
+  <header>
+    <h1>Multi Person Daily Routine Tracker</h1>
+    <button id="add-button">+</button>
+    <button id="logout-button">Logout</button>
+  </header>
+
+  <div id="routine-list"></div>
+
+  <!-- Overlay layout box -->
+  <div id="overlay" class="hidden"></div>
+  <div id="popup-box" class="hidden">
+    <h2>Nama Routine</h2>
+    <input type="text" id="routine-input" placeholder="Masukkan Nama Routine disini">
+    <div class="button-container">
+      <button id="cancel-button">Cancel</button>
+      <button id="ok-button">OK</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('logout-button').addEventListener('click', function () {
+      localStorage.removeItem('isLoggedIn'); // Hapus status login
+      window.location.href = './Login/landing.html'; // Redirect ke landing page
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
