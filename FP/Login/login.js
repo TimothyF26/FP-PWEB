@@ -17,9 +17,9 @@ document.getElementById('login-form').addEventListener('submit', function (event
       // Simpan status login ke localStorage
       localStorage.setItem('isLoggedIn', true);
 
-      // Redirect ke halaman utama (index.html)
+      // Redirect ke halaman person (person.html)
       alert(`Welcome back, ${validUser.username}!`);
-      window.location.href = '../index.html';
+      window.location.href = '../Person/person.html';
     } else {
       // Password salah
       errorMessage.textContent = 'Incorrect password.';
